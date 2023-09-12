@@ -4,27 +4,21 @@ void setup() {
 }
 void draw() {
   //your code here
-  scale(5,0);
+  for (int i=-50; i<500; i+=10) {
+    for (int j=-50; j<500; j+=10) {
+      scale(i, j);
+    }
+  }
 }
 void scale(int x, int y) {
-  for(int i=1;i<22;i++){
-  createCurves(x, y);
-  x+=20;
-}
-  }
-
-void createCurves(int x, int y) {
-  for(int i=1;i<8;i++){
-  //noFill();
+  fill((float)(Math.random()*256), (float)(Math.random()*256), (float)(Math.random()*256));
   beginShape();
-  curveVertex(400-x,10+y);
-  curveVertex(400-x,10+y);
-  curveVertex(450-x,50+y);
-  curveVertex(400-x,90+y);
-  curveVertex(450-x,130+y);
-  curveVertex(400-x,170+y);
-  curveVertex(400-x,170+y);
+  curveVertex(400-x, 20+y);
+  curveVertex(400-x, 20+y);
+  curveVertex(450-x, 50+y);
+  curveVertex(400-x, 80+y);
+  curveVertex(400-x, 80+y);
   endShape();
-  y+=55;
-  }
+  x+=10;
+  y+=10;
 }
